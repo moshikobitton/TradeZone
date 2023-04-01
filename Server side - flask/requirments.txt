@@ -1,0 +1,4 @@
+pymssql
+flask
+flask_cors
+networkx
