@@ -40,6 +40,14 @@ namespace Server_side.Controllers
         }
 
 
+        // GET IND + YEAR + Percentage
+        public List<Trade> GetByIndYearAndPercentage(string ind, int year, int percentage)
+        {
+            Trade trade = new Trade();
+            return trade.ReadTradesByIndYearAndPercentage(ind, year, percentage);
+        }
+
+
         // GET COU/PAR + YEAR + IND
         public List<Trade> Get(string couISO, char flow, int year, string ind)
         {

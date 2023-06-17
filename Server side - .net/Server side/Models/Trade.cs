@@ -58,6 +58,12 @@ namespace Server_side.Models
             return DBservices.ReadTradesByIndAndYear(ind, year);
         }
 
+        // Read by ind, year and percentage
+        public List<Trade> ReadTradesByIndYearAndPercentage(string ind, int year, int percentage)
+        {
+            return DBservices.GetByIndYearAndPercentage(ind, year, percentage);
+        }
+
         public List<Trade> ReadTrades(string couISO, char flow, int year, string ind)
         {
             return DBservices.ReadByCOU(couISO, flow, year, ind);

@@ -24,5 +24,14 @@ namespace Server_side.Controllers
             return p.DataForPieChart(pieChartProducts, cou, flow, year);
         }
 
+        [HttpPost]
+        [Route("api/Products/NetowrkType")]
+        // get the data for the pie chart
+        public List<Product> NetowrkType([FromBody]List<Product> products)
+        {
+            Product p = new Product();
+            return p.DataTimelineChart(products);
+        }
+
     }
 }

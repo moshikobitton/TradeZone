@@ -1,0 +1,5 @@
+pymssql
+flask~=2.2.2
+flask_cors
+networkx~=2.6.3
+powerlaw~=1.5

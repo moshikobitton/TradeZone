@@ -11,9 +11,10 @@ namespace Server_side.Controllers
     public class UsersController : ApiController
     {
         // GET api/<controller>
-        public IEnumerable<string> Get()
+        public int Get()
         {
-            return new string[] { "value1", "value2" };
+            User u = new User();
+            return u.GetAmountRegistered();
         }
 
 
@@ -53,5 +54,7 @@ namespace Server_side.Controllers
             User u = new User();
             return u.IsEmailExist(email);
         }
+
+
     }
 }

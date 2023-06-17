@@ -17,6 +17,13 @@ namespace Server_side.Controllers
             return c.GetAllCountries();
         }
 
+        // GET api/<controller>
+        public List<Country> Get(string ind, string flow, int year, int countriesNumber)
+        {
+            Country c = new Country();
+            return c.DataForHistogramChart(ind, flow, year, countriesNumber);
+        }
+
         // get the data for the bar chart
         public List<Country> POST(string code, string flow, int year, [FromBody]List<Country> countries)
         {

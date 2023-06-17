@@ -10,6 +10,7 @@ namespace Server_side.Models
         int id;
         string details;
         string code;
+        Dictionary<int, string> timelineSquare;
         float sum_values_of_product;
         string color;
 
@@ -30,11 +31,19 @@ namespace Server_side.Models
 
         public Product() { }
 
+        public Product(string details, string code, Dictionary<int, string> timelineSquare)
+        {
+            this.details = details;
+            this.code = code;
+            this.TimelineSquare = timelineSquare;
+        }
+
         public int Id { get => id; set => id = value; }
         public string Details { get => details; set => details = value; }
         public string Code { get => code; set => code = value; }
         public float Sum_values_of_product { get => sum_values_of_product; set => sum_values_of_product = value; }
         public string Color { get => color; set => color = value; }
+        public Dictionary<int, string> TimelineSquare { get => timelineSquare; set => timelineSquare = value; }
 
         // Get all products
         public List<Product> GetAllProducts()
@@ -46,6 +55,12 @@ namespace Server_side.Models
         public List<Product> DataForPieChart(List<Product> pieChartProducts, string cou, string flow, int year)
         {
             return DBservices.DataForPieChart(pieChartProducts, cou, flow, year);
+        }
+
+        // Get data for timeline chart
+        public List<Product> DataTimelineChart(List<Product> products)
+        {
+            return DBservices.DataTimelineChart(products);
         }
 
     }

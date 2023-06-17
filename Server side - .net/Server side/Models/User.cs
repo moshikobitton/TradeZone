@@ -37,6 +37,14 @@ namespace Server_side.Models
             this.Pwd = pwd;
         }
 
+        public User(string firstName, string lastName, string email, int userId)
+        {
+            this.First_name = firstName;
+            this.Last_name = lastName;
+            this.Email = email;
+            this.userId = userId;
+        }
+
         public string Email { get => email; set => email = value; }
         public string Pwd { get => pwd; set => pwd = value; }
         public int UserId { get => userId; set => userId = value; }
@@ -58,6 +66,11 @@ namespace Server_side.Models
         public int IsEmailExist(string email)
         {
             return DBservices.IsEmailExist(email);
+        }
+
+        public int GetAmountRegistered()
+        {
+            return DBservices.GetAmountRegistered();
         }
     }
 }
